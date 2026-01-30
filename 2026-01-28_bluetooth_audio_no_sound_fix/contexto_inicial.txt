@@ -1,0 +1,53 @@
+  Lo que describes es un escenario muy común y casi con toda
+  seguridad la causa de los problemas. Hiciste configuraciones
+  manuales para un hardware específico (el adaptador USB) y ahora
+  esas configuraciones están creando un conflicto con el hardware
+  nuevo (el Bluetooth integrado de tu laptop).
+
+  Además, el error PipeWire's BlueZ SPA missing que encontramos
+  antes sigue siendo válido. Es probable que tengas dos problemas
+  combinados: una configuración antigua conflictiva y un paquete
+  de software faltante.
+
+  Vamos a solucionar ambos. Te propongo el siguiente plan de
+  acción:
+
+   1. Instalar el paquete faltante: Esto es esencial, ya que el
+      sistema de audio no puede "ver" el Bluetooth sin él.
+   2. Restaurar la configuración de Bluetooth: Renombraremos los
+      archivos de configuración antiguos para que el sistema los
+      ignore y utilice la configuración predeterminada, que
+      debería funcionar con tu hardware actual.
+
+  Empecemos. Por favor, sigue estos pasos:
+
+  Paso 1: Instalar el plugin de audio
+
+  Abre una terminal y ejecuta el siguiente comando. Esto
+  instalará el "conector" que le falta a PipeWire.
+
+  sudo apt update && sudo apt install libspa-0.2-bluetooth
+
+  (Si no usas Ubuntu/Debian, utiliza el comando equivalente para
+  tu sistema que te mencioné antes).
+
+  Paso 2: Restaurar la configuración principal de Bluetooth
+
+  El archivo /etc/bluetooth/main.conf es el principal sospechoso
+  de contener las configuraciones antiguas. El siguiente comando
+  no lo borrará, solo le cambiará el nombre a main.conf.bak para
+  que el sistema lo ignore y use la configuración por defecto.
+
+  Por favor, copia y pega este comando en tu terminal:
+
+  sudo mv /etc/bluetooth/main.conf /etc/bluetooth/main.conf.bak
+
+  Paso 3: Reiniciar el sistema
+
+  Una vez que hayas completado los dos pasos anteriores, reinicia
+  tu ordenador completamente.
+
+  Después de reiniciar, tu sistema debería cargar con una
+  configuración de Bluetooth limpia y todos los componentes de
+  software necesarios. Intenta conectar tus auriculares o
+  dispositivo Bluetooth de nuevo. Debería funcionar.

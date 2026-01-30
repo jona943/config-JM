@@ -1,0 +1,69 @@
+# Binaries and build artifacts
+*.o
+*.ko
+*.mod
+*.bin
+*.so
+*.a
+*.out
+*.exe
+*.dll
+*.d
+
+# OS-specific temporary files
+*~
+*.bak
+*.tmp
+*.temp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+log/
+logs/
+
+# Compressed archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# Disk images / virtual machine images
+*.iso
+*.img
+*.vmdk
+*.vdi
+
+# Installer files
+*.AppImage
+*.deb
+*.rpm
+*.msi
+*.dmg
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Dependency directories
+node_modules/
+vendor/
+build/
+dist/
+target/
+
+# Package files
+*.jar
+*.war
+*.ear
+*.pyc
+__pycache__/

@@ -1,0 +1,9 @@
+Resumen de optimización de batería:
+
+1.  Se instaló 'powertop' para analizar el consumo de energía del sistema.
+2.  Se debatió sobre su uso y se decidió que TLP era una mejor opción para la gestión automática.
+3.  Se instaló 'TLP' (y 'tlp-rdw') como solución principal de ahorro de energía.
+4.  Se configuró TLP para que se inicie automáticamente con el sistema.
+5.  Se desactivó el servicio de 'powertop' para evitar conflictos con TLP.
+
+Resultado: TLP está ahora activo y optimizando la duración de la batería de forma automática.

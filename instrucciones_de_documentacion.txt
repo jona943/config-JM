@@ -1,0 +1,60 @@
+# Estándar de Documentación v3.0
+
+Este archivo define el estándar que sigo para documentar mis cambios y configuraciones. El objetivo es mantener un historial personal que sea robusto, fácil de seguir y auditable para mí en el futuro.
+
+## 1. Tono y Perspectiva
+
+Toda la documentación la escribo en **primera persona** (yo). El tono es el de una bitácora personal, donde narro las acciones que tomé, los problemas que encontré y las soluciones que apliqué.
+
+- **Ejemplo (en vez de):** "Se configuró el sistema para..."
+- **Ejemplo (escribir):** "Configuré mi sistema para..." o "Lo que hice fue..."
+
+## 2. Idioma
+
+Toda la documentación debe estar en **español**.
+
+## 3. Estructura de Directorios
+
+Cada intervención la documento en su propio directorio:
+
+`YYYY-MM-DD_descripcion_breve`
+
+-   `YYYY-MM-DD`: La fecha en que realicé la intervención.
+-   `descripcion_breve`: Un nombre corto y descriptivo de lo que hice (ej: `reparar_wifi`, `configurar_notificaciones`).
+
+## 4. Contenido del Directorio
+
+Cada directorio debe contener los siguientes archivos:
+
+### 4.1. README.md (Obligatorio)
+
+Es mi documento técnico principal. Sigo esta estructura:
+
+-   `# Título Descriptivo`: Un título personal. Ej: "Cómo Solucioné mi Problema de Wi-Fi".
+-   `## Propósito`: ¿Qué problema específico estaba tratando de resolver?
+-   `## Diagnóstico`: Los pasos y comandos que usé para identificar la causa del problema. Incluyo los comandos y sus salidas de texto relevantes.
+    ```bash
+    # Ejemplo de mi diagnóstico
+    sudo dmesg | grep -i error
+    # output: [ 12.345] ERROR: modulo con error de firma.
+    ```
+-   `## Solución que Apliqué`: Los pasos y comandos exactos que ejecuté para implementar la solución.
+-   `## Verificación`: Los comandos que usé para confirmar que mi solución funcionó.
+-   `## Cómo Revertir los Cambios`: Cómo podría deshacer los cambios que hice. Si no es posible, explico por qué.
+
+### 4.2. contexto_interaccion.txt (Opcional pero Recomendado)
+
+Un archivo de texto que narra la conversación o el flujo de trabajo que me llevó a la solución. Es un registro cronológico de la interacción (preguntas, respuestas, hipótesis). Este archivo puede mantener un estilo de tercera persona si es un log de una conversación con un asistente.
+
+### 4.3. Archivos de Configuración
+
+Cualquier archivo de configuración, script o recurso que usé o modifiqué (`main.conf`, `install.sh`, etc.).
+
+## 5. Ejemplo de Estructura
+
+```
+/2026-01-29_wifi_rtl8723de_reintento/
+├───README.md                   # Mi documentación técnica formal
+├───contexto_interaccion.txt    # El resumen de la conversación
+└───(otros archivos si aplica)
+```
