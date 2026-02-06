@@ -1,0 +1,18 @@
+[General]
+# ControllerMode = dual
+# MultiProfile = off
+FastConnectable = true
+JustWorksRepairing = always
+ClassicBondedOnly = false
+# new
+Disable=Headset
+Enable=Source,Sink,Headset,Media,A2DP,HFP,HSP,AVRCP,HID 
+
+[GATT]
+ReconnectIntervals = 1,2,3,5,8,13,21,34
+MinConnectionInterval = 7
+MaxConnectionInterval = 9
+
+[a2dp]
+SBCSources = 1
+A2DPSources = aac,aptx,aptx_hd,ldac
