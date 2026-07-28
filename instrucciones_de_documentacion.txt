@@ -1,6 +1,6 @@
-# Estándar de Documentación v3.0
+# Estándar de Documentación v3.1
 
-Este archivo define el estándar que sigo para documentar mis cambios y configuraciones. El objetivo es mantener un historial personal que sea robusto, fácil de seguir y auditable para mí en el futuro.
+Este archivo define el estándar que sigo para documentar mis cambios, configuraciones y optimizaciones del sistema. El objetivo es mantener un historial personal que sea robusto, organizado por componentes y fácil de auditar en el futuro.
 
 ## 1. Tono y Perspectiva
 
@@ -13,48 +13,48 @@ Toda la documentación la escribo en **primera persona** (yo). El tono es el de 
 
 Toda la documentación debe estar en **español**.
 
-## 3. Estructura de Directorios
+## 3. Estructura de Categorías y Directorios
 
-Cada intervención la documento en su propio directorio:
+Para mantener la raíz limpia y organizada, las intervenciones no se colocan en la raíz, sino dentro de una de las 4 categorías principales:
 
-`YYYY-MM-DD_descripcion_breve`
+```
+config-JM/
+├── 🌐 redes_y_conectividad/       # Wi-Fi, Bluetooth, servicios de red
+├── ⚙️ sistema_y_rendimiento/       # Batería, kernel, idiomas del sistema, monitoreo
+├── 🖱️ perifericos_y_gestos/        # Touchpad, mouse, conexiones USB/Android
+└── 🖥️ aplicaciones_y_escritorio/   # XFCE, Zoom, IDEs, reproductores
+```
 
--   `YYYY-MM-DD`: La fecha en que realicé la intervención.
--   `descripcion_breve`: Un nombre corto y descriptivo de lo que hice (ej: `reparar_wifi`, `configurar_notificaciones`).
+Dentro de la categoría correspondiente, cada intervención se aloja en su propia carpeta:
 
-## 4. Contenido del Directorio
+`categoria/nombre_descriptivo/`
 
-Cada directorio debe contener los siguientes archivos:
+- **`categoria`**: Una de las 4 carpetas principales (`redes_y_conectividad`, `sistema_y_rendimiento`, `perifericos_y_gestos`, `aplicaciones_y_escritorio`).
+- **`nombre_descriptivo`**: Un nombre claro sobre la solución (ej: `wifi_rtl8723de_fix`, `apple_mouse_a1296_fix`).
+
+## 4. Contenido de cada Intervención
+
+Cada directorio de intervención debe contener los siguientes archivos:
 
 ### 4.1. README.md (Obligatorio)
 
 Es mi documento técnico principal. Sigo esta estructura:
 
--   `# Título Descriptivo`: Un título personal. Ej: "Cómo Solucioné mi Problema de Wi-Fi".
--   `## Propósito`: ¿Qué problema específico estaba tratando de resolver?
--   `## Diagnóstico`: Los pasos y comandos que usé para identificar la causa del problema. Incluyo los comandos y sus salidas de texto relevantes.
+- `# Título Descriptivo`: Un título personal. Ej: "Cómo Solucioné mi Problema de Wi-Fi".
+- `## Propósito`: ¿Qué problema específico estaba tratando de resolver?
+- `## Diagnóstico`: Los pasos y comandos que usé para identificar la causa del problema. Incluyo los comandos y sus salidas de texto relevantes.
     ```bash
     # Ejemplo de mi diagnóstico
     sudo dmesg | grep -i error
-    # output: [ 12.345] ERROR: modulo con error de firma.
     ```
--   `## Solución que Apliqué`: Los pasos y comandos exactos que ejecuté para implementar la solución.
--   `## Verificación`: Los comandos que usé para confirmar que mi solución funcionó.
--   `## Cómo Revertir los Cambios`: Cómo podría deshacer los cambios que hice. Si no es posible, explico por qué.
+- `## Solución que Apliqué`: Los pasos y comandos exactos que ejecuté para implementar la solución.
+- `## Verificación`: Los comandos que usé para confirmar que mi solución funcionó.
+- `## Cómo Revertir los Cambios`: Cómo podría deshacer los cambios que hice. Si no es posible, explico por qué.
 
-### 4.2. contexto_interaccion.txt (Opcional pero Recomendado)
+### 4.2. contexto_interaccion.txt / contexto_inicial.txt (Opcional)
 
-Un archivo de texto que narra la conversación o el flujo de trabajo que me llevó a la solución. Es un registro cronológico de la interacción (preguntas, respuestas, hipótesis). Este archivo puede mantener un estilo de tercera persona si es un log de una conversación con un asistente.
+Registro cronológico de la interacción o conversación previa que me llevó a la solución.
 
-### 4.3. Archivos de Configuración
+### 4.3. Archivos de Configuración y Scripts
 
-Cualquier archivo de configuración, script o recurso que usé o modifiqué (`main.conf`, `install.sh`, etc.).
-
-## 5. Ejemplo de Estructura
-
-```
-/2026-01-29_wifi_rtl8723de_reintento/
-├───README.md                   # Mi documentación técnica formal
-├───contexto_interaccion.txt    # El resumen de la conversación
-└───(otros archivos si aplica)
-```
+Cualquier archivo de configuración, script o recurso modificado (`main.conf`, `.desktop`, etc.).
