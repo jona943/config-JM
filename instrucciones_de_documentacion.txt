@@ -18,7 +18,7 @@ Toda la documentación debe estar en **español**.
 Para mantener la raíz limpia y organizada, las intervenciones no se colocan en la raíz, sino dentro de una de las 4 categorías principales:
 
 ```
-config-JM/
+hp-db0xxx/
 ├── 🌐 redes_y_conectividad/       # Wi-Fi, Bluetooth, servicios de red
 ├── ⚙️ sistema_y_rendimiento/       # Batería, kernel, idiomas del sistema, monitoreo
 ├── 🖱️ perifericos_y_gestos/        # Touchpad, mouse, conexiones USB/Android
